@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Patrick & Camila — Nossa história em mensagens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBEFE7;
+    --bg-2: #F5DDD0;
+    --cream: #FFF6EE;
+    --pink: #F4A8A0;
+    --pink-deep: #E27A7A;
+    --red: #C73838;
+    --red-deep: #9B1F2E;
+    --burgundy: #5C1318;
+    --ink: #2A0A0E;
+    --gold: #C89B4A;
+    --muted: #8C5252;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--ink); }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 80px 64px 100px;
+    background: 
+      radial-gradient(ellipse at 20% 10%, rgba(244, 168, 160, 0.25) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 80%, rgba(199, 56, 56, 0.12) 0%, transparent 55%),
+      var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Grain texture */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .page > * { position: relative; z-index: 2; }
+
+  /* ─────────── HERO ─────────── */
+  .hero {
+    text-align: center;
+    padding: 32px 0 56px;
+    border-bottom: 1px solid rgba(155, 31, 46, 0.2);
+    position: relative;
+  }
+  .eyebrow {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--red);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 96px;
+    line-height: 0.92;
+    color: var(--burgundy);
+    letter-spacing: -0.03em;
+    margin-bottom: 8px;
+  }
+  .hero h1 .amp {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--red);
+    font-size: 110px;
+    vertical-align: -8px;
+    padding: 0 8px;
+  }
+  .hero h2 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--muted);
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+  .hero .dates {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    padding: 12px 32px;
+    border: 1px solid rgba(155, 31, 46, 0.3);
+    border-radius: 100px;
+    margin-top: 16px;
+  }
+  .hero .dates .heart { color: var(--red); font-size: 14px; }
+  .hero .corner-deco {
+    position: absolute;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+  }
+  .hero .corner-deco.tl { top: 20px; left: 0; }
+  .hero .corner-deco.tr { top: 20px; right: 0; text-align: right; }
+
+  /* ─────────── SECTION HEADERS ─────────── */
+  section { margin-top: 80px; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(155, 31, 46, 0.2);
+  }
+  .section-number {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--burgundy);
+    letter-spacing: -0.01em;
+  }
+  .section-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--muted);
+    margin-left: auto;
+  }
+
+  /* ─────────── BIG NUMBERS ─────────── */
+  .big-numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(155, 31, 46, 0.2);
+    border: 1px solid rgba(155, 31, 46, 0.2);
+  }
+  .stat {
+    background: var(--cream);
+    padding: 36px 24px 32px;
+    text-align: left;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .stat.featured {
+    background: var(--red-deep);
+    color: var(--cream);
+  }
+  .stat.accent {
+    background: var(--pink);
+    color: var(--burgundy);
+  }
+  .stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .stat.featured .stat-label { color: rgba(255, 246, 238, 0.7); }
+  .stat.accent .stat-label { color: var(--burgundy); opacity: 0.7; }
+  .stat-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 72px;
+    line-height: 0.95;
+    color: var(--burgundy);
+    letter-spacing: -0.03em;
+    margin-top: 8px;
+  }
+  .stat.featured .stat-value { color: var(--cream); }
+  .stat-value .small { font-size: 28px; vertical-align: 24px; margin-left: 4px; opacity: 0.7; font-style: italic; font-weight: 400; }
+  .stat-detail {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+  .stat.featured .stat-detail { color: rgba(255, 246, 238, 0.8); }
+  .stat.accent .stat-detail { color: var(--burgundy); opacity: 0.7; }
+  .stat-icon {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 18px;
+    opacity: 0.5;
+  }
+
+  /* ─────────── QUOTE ─────────── */
+  .quote-block {
+    margin: 64px 0;
+    text-align: center;
+    padding: 48px 80px;
+    position: relative;
+  }
+  .quote-block::before, .quote-block::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--red);
+  }
+  .quote-block::before { top: 16px; }
+  .quote-block::after { bottom: 16px; }
+  .quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.3;
+    color: var(--burgundy);
+    letter-spacing: -0.01em;
+  }
+  .quote .highlight { color: var(--red); font-weight: 500; }
+
+  /* ─────────── CHART CONTAINERS ─────────── */
+  .chart-card {
+    background: var(--cream);
+    border: 1px solid rgba(155, 31, 46, 0.15);
+    padding: 32px 36px;
+  }
+  .chart-card-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--burgundy);
+    margin-bottom: 4px;
+  }
+  .chart-card-subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  /* ─────────── YEARS CHART (bar) ─────────── */
+  .years-chart {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    height: 320px;
+    padding: 0 24px;
+  }
+  .year-bar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .year-bar-fill {
+    width: 100%;
+    background: linear-gradient(180deg, var(--red) 0%, var(--red-deep) 100%);
+    position: relative;
+    border-radius: 4px 4px 0 0;
+  }
+  .year-bar-fill.peak {
+    background: linear-gradient(180deg, var(--red-deep) 0%, var(--burgundy) 100%);
+  }
+  .year-bar-fill.partial {
+    background: linear-gradient(180deg, var(--pink) 0%, var(--pink-deep) 100%);
+  }
+  .year-bar-value {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--burgundy);
+    white-space: nowrap;
+  }
+  .year-bar-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 32px;
+    color: var(--burgundy);
+    margin-top: 16px;
+    letter-spacing: -0.02em;
+  }
+  .year-bar-sublabel {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  
+  /* ─────────── HEATMAP ─────────── */
+  .heatmap-wrapper { overflow-x: auto; }
+  .heatmap {
+    display: grid;
+    grid-template-columns: 80px repeat(24, 1fr);
+    gap: 3px;
+    font-family: 'Inter', sans-serif;
+  }
+  .heatmap .hour-label, .heatmap .dow-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .heatmap .dow-label {
+    justify-content: flex-end;
+    padding-right: 12px;
+    font-weight: 600;
+    color: var(--burgundy);
+    font-size: 12px;
+  }
+  .heatmap .corner { background: transparent; }
+  .heatmap .cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    position: relative;
+    cursor: default;
+  }
+  .heatmap .cell.peak::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border: 1.5px solid var(--gold);
+    border-radius: 2px;
+  }
+  .heatmap-legend {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    justify-content: flex-end;
+  }
+  .heatmap-legend-bar {
+    display: flex;
+    gap: 2px;
+  }
+  .heatmap-legend-bar div {
+    width: 18px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  
+  /* ─────────── EMOJI GRID ─────────── */
+  .emoji-section {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 32px;
+  }
+  .emoji-podium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .emoji-podium-card {
+    background: var(--cream);
+    border: 1px solid rgba(155, 31, 46, 0.15);
+    padding: 24px 16px;
+    text-align: center;
+    position: relative;
+  }
+  .emoji-podium-card.first {
+    background: var(--red-deep);
+    color: var(--cream);
+    transform: translateY(-8px);
+  }
+  .emoji-podium-card.first .emoji-rank,
+  .emoji-podium-card.first .emoji-count,
+  .emoji-podium-card.first .emoji-label { color: var(--cream); }
+  .emoji-rank {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--red);
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+  .emoji-display {
+    font-size: 64px;
+    line-height: 1;
+    margin: 8px 0;
+  }
+  .emoji-count {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--burgundy);
+    margin-top: 8px;
+  }
+  .emoji-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .emoji-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .emoji-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 60px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(155, 31, 46, 0.2);
+    gap: 16px;
+  }
+  .emoji-row:last-child { border-bottom: none; }
+  .emoji-row .e { font-size: 24px; }
+  .emoji-row .bar {
+    height: 8px;
+    background: rgba(155, 31, 46, 0.1);
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .emoji-row .bar-fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--pink-deep), var(--red));
+    border-radius: 4px;
+  }
+  .emoji-row .count {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--burgundy);
+    text-align: right;
+  }
+
+  /* ─────────── EXTRA CURIOSIDADES ─────────── */
+  .curiosities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(155, 31, 46, 0.2);
+    border: 1px solid rgba(155, 31, 46, 0.2);
+  }
+  .curio {
+    background: var(--cream);
+    padding: 32px 28px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  .curio.dark { background: var(--burgundy); color: var(--cream); }
+  .curio.dark .curio-label { color: rgba(255, 246, 238, 0.7); }
+  .curio.dark .curio-value { color: var(--cream); }
+  .curio.dark .curio-detail { color: rgba(255, 246, 238, 0.8); }
+  .curio-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .curio-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    color: var(--burgundy);
+    letter-spacing: -0.02em;
+    margin-top: 12px;
+  }
+  .curio-value.italic { font-style: italic; font-weight: 400; }
+  .curio-detail {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: auto;
+    padding-top: 16px;
+    line-height: 1.4;
+  }
+  
+  /* ─────────── SENDER COMPARISON ─────────── */
+  .vs-block {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 32px;
+  }
+  .vs-side {
+    text-align: center;
+    padding: 32px;
+    background: var(--cream);
+    border: 1px solid rgba(155, 31, 46, 0.15);
+    position: relative;
+  }
+  .vs-side.left { border-right: 3px solid var(--red); }
+  .vs-side.right { border-left: 3px solid var(--pink-deep); }
+  .vs-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--burgundy);
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+  .vs-stat {
+    margin: 16px 0;
+  }
+  .vs-stat-value {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 40px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .vs-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .vs-center {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--red);
+  }
+  
+  /* ─────────── TE AMO TIMELINE ─────────── */
+  .teamo-chart {
+    margin-top: 16px;
+    padding: 0 8px;
+  }
+  .teamo-line {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 140px;
+    border-bottom: 1px solid rgba(155, 31, 46, 0.2);
+    padding-bottom: 0;
+  }
+  .teamo-bar {
+    flex: 1;
+    background: linear-gradient(180deg, var(--pink) 0%, var(--red) 100%);
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    min-height: 2px;
+  }
+  .teamo-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+  
+  /* ─────────── FOOTER ─────────── */
+  .footer {
+    margin-top: 100px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(155, 31, 46, 0.2);
+    text-align: center;
+  }
+  .footer .heart-trail {
+    font-size: 14px;
+    color: var(--red);
+    letter-spacing: 0.5em;
+    margin-bottom: 16px;
+  }
+  .footer .footer-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+  }
+  .footer .footer-text strong {
+    color: var(--burgundy);
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  /* ─────────── HEART DECORATIONS ─────────── */
+  .heart-deco {
+    position: absolute;
+    color: var(--red);
+    opacity: 0.15;
+    font-size: 24px;
+    z-index: 1;
+  }
+  .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+  /* ═══════════════════════════════════════════ */
+  /* ═══════════ RESPONSIVIDADE ═══════════════ */
+  /* ═══════════════════════════════════════════ */
+
+  /* TABLET (até 900px) */
+  @media (max-width: 900px) {
+    .page { padding: 56px 32px 80px; }
+    .hero h1 { font-size: 72px; }
+    .hero h1 .amp { font-size: 84px; }
+    .hero h2 { font-size: 22px; }
+    .section-title { font-size: 26px; }
+    .section-subtitle { display: none; }
+    .big-numbers { grid-template-columns: repeat(2, 1fr); }
+    .stat-value { font-size: 56px; }
+    .emoji-section { grid-template-columns: 1fr; }
+    .curiosities { grid-template-columns: repeat(2, 1fr); }
+    .quote { font-size: 26px; }
+    .vs-block { grid-template-columns: 1fr; gap: 16px; }
+    .vs-center { display: none; }
+    .vs-side.left { border-right: none; border-bottom: 3px solid var(--red); }
+    .vs-side.right { border-left: none; border-top: 3px solid var(--pink-deep); margin-top: -8px; }
+  }
+
+  /* MOBILE (até 640px) */
+  @media (max-width: 640px) {
+    .page { padding: 40px 20px 60px; }
+    
+    /* HERO */
+    .hero { padding: 24px 0 40px; }
+    .hero .corner-deco { display: none; }
+    .eyebrow { font-size: 14px; margin-bottom: 8px; }
+    .hero h1 { font-size: 48px; line-height: 1; }
+    .hero h1 .amp { font-size: 56px; vertical-align: -4px; padding: 0 4px; }
+    .hero h2 { font-size: 16px; margin-top: 12px; margin-bottom: 16px; }
+    .hero .dates { font-size: 10px; padding: 10px 20px; gap: 10px; }
+    
+    /* SECTION HEADERS */
+    section { margin-top: 56px; }
+    .section-header { flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .section-title { font-size: 22px; }
+    .section-number { font-size: 12px; }
+    
+    /* BIG NUMBERS */
+    .big-numbers { grid-template-columns: 1fr; }
+    .stat { padding: 24px 20px; min-height: 140px; }
+    .stat-value { font-size: 52px; }
+    .stat-value .small { font-size: 20px; vertical-align: 18px; }
+    .stat-label { font-size: 10px; }
+    .stat-detail { font-size: 13px; margin-top: 8px; }
+    
+    /* QUOTES */
+    .quote-block { padding: 32px 16px; margin: 40px 0; }
+    .quote { font-size: 20px; line-height: 1.35; }
+    
+    /* CHART CARDS */
+    .chart-card { padding: 24px 20px; }
+    .chart-card-title { font-size: 18px; }
+    .chart-card-subtitle { font-size: 13px; margin-bottom: 20px; }
+    
+    /* YEARS CHART */
+    .years-chart { height: 240px; gap: 12px; padding: 0 8px; }
+    .year-bar-value { font-size: 16px; top: -28px; }
+    .year-bar-label { font-size: 22px; margin-top: 10px; }
+    .year-bar-sublabel { font-size: 10px; }
+    
+    /* HEATMAP — solução: scroll horizontal */
+    .heatmap-wrapper {
+      overflow-x: auto;
+      margin: 0 -20px;
+      padding: 0 20px 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .heatmap {
+      grid-template-columns: 50px repeat(24, 24px);
+      min-width: 626px;
+      gap: 2px;
+    }
+    .heatmap .dow-label { font-size: 10px; padding-right: 8px; }
+    .heatmap .hour-label { font-size: 9px; }
+    .heatmap-legend { margin-top: 16px; font-size: 10px; }
+    /* Indicador de scroll */
+    .heatmap-hint {
+      display: block !important;
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 12px;
+    }
+    
+    /* EMOJI */
+    .emoji-podium { gap: 8px; margin-bottom: 24px; }
+    .emoji-podium-card { padding: 18px 10px; }
+    .emoji-podium-card.first { transform: translateY(-4px); }
+    .emoji-display { font-size: 44px; }
+    .emoji-count { font-size: 22px; }
+    .emoji-rank { font-size: 11px; }
+    .emoji-label { font-size: 9px; letter-spacing: 0.1em; }
+    .emoji-row { grid-template-columns: 32px 1fr 48px; gap: 12px; padding: 10px 0; }
+    .emoji-row .e { font-size: 20px; }
+    .emoji-row .count { font-size: 15px; }
+    
+    /* VS COMPARISON */
+    .vs-side { padding: 24px 20px; }
+    .vs-name { font-size: 20px; margin-bottom: 16px; }
+    .vs-stat { margin: 12px 0; }
+    .vs-stat-value { font-size: 32px; }
+    .vs-stat-label { font-size: 9px; }
+    .vs-center { font-size: 36px; }
+    
+    /* TE AMO TIMELINE */
+    .teamo-line { height: 100px; gap: 2px; }
+    .teamo-labels { font-size: 9px; }
+    .teamo-labels span:nth-child(2),
+    .teamo-labels span:nth-child(4) { display: none; }
+    
+    /* CURIOSIDADES */
+    .curiosities { grid-template-columns: 1fr; }
+    .curio { padding: 24px 20px; min-height: auto; }
+    .curio-value { font-size: 36px; margin-top: 8px; }
+    .curio-detail { font-size: 13px; padding-top: 12px; }
+    
+    /* FOOTER */
+    .footer { margin-top: 64px; padding-top: 32px; }
+    .footer .footer-text { font-size: 14px; }
+    .footer .heart-trail { font-size: 12px; letter-spacing: 0.3em; }
+  }
+  
+  /* MOBILE PEQUENO (até 380px) */
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 40px; }
+    .hero h1 .amp { font-size: 46px; }
+    .hero .dates { font-size: 9px; padding: 8px 14px; gap: 6px; }
+    .stat-value { font-size: 44px; }
+    .quote { font-size: 18px; }
+  }
+  
+  /* Padrão: hint escondido */
+  .heatmap-hint { display: none; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="corner-deco tl">— a story —</span>
+    <span class="corner-deco tr">in messages —</span>
+    <div class="eyebrow">★ ★ ★ &nbsp;&nbsp; Volume nº 1 &nbsp;&nbsp; ★ ★ ★</div>
+    <h1>Patrick<span class="amp">&amp;</span>Camila</h1>
+    <h2>Nossa história, em mensagens</h2>
+    <div class="dates">
+      <span>16 Fev 2024</span>
+      <span class="heart">❤</span>
+      <span>12 Mai 2026</span>
+    </div>
+  </header>
+
+  <!-- BIG NUMBERS -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 01 —</span>
+      <h3 class="section-title">Os números do nosso amor</h3>
+      <span class="section-subtitle">a sound foundation</span>
+    </div>
+    <div class="big-numbers">
+      <div class="stat featured">
+        <div>
+          <div class="stat-label">Mensagens</div>
+          <div class="stat-value">60.794</div>
+        </div>
+        <div class="stat-detail">trocadas até hoje</div>
+        <div class="stat-icon">✉</div>
+      </div>
+      <div class="stat">
+        <div>
+          <div class="stat-label">Dias juntos</div>
+          <div class="stat-value">817</div>
+        </div>
+        <div class="stat-detail">≈ 2 anos e 3 meses</div>
+        <div class="stat-icon">☀</div>
+      </div>
+      <div class="stat accent">
+        <div>
+          <div class="stat-label">Te amos</div>
+          <div class="stat-value">138</div>
+        </div>
+        <div class="stat-detail">declarações registradas</div>
+        <div class="stat-icon">❤</div>
+      </div>
+      <div class="stat">
+        <div>
+          <div class="stat-label">Fotos</div>
+          <div class="stat-value">3.534</div>
+        </div>
+        <div class="stat-detail">memórias compartilhadas</div>
+        <div class="stat-icon">◉</div>
+      </div>
+
+      <div class="stat">
+        <div>
+          <div class="stat-label">Emojis</div>
+          <div class="stat-value">2.901</div>
+        </div>
+        <div class="stat-detail">em 203 variações únicas</div>
+        <div class="stat-icon">♡</div>
+      </div>
+      <div class="stat accent">
+        <div>
+          <div class="stat-label">Áudios</div>
+          <div class="stat-value">4.609</div>
+        </div>
+        <div class="stat-detail">conversas em voz</div>
+        <div class="stat-icon">♪</div>
+      </div>
+      <div class="stat">
+        <div>
+          <div class="stat-label">Vídeos</div>
+          <div class="stat-value">782</div>
+        </div>
+        <div class="stat-detail">momentos em movimento</div>
+        <div class="stat-icon">▶</div>
+      </div>
+      <div class="stat featured">
+        <div>
+          <div class="stat-label">Sequência</div>
+          <div class="stat-value">171<span class="small">dias</span></div>
+        </div>
+        <div class="stat-detail">sem pular um único dia</div>
+        <div class="stat-icon">∞</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <div class="quote-block">
+    <p class="quote">
+      Em 783 de 817 dias, vocês conversaram.<br>
+      <span class="highlight">Isso é 96% da história</span>, escrita junto.
+    </p>
+  </div>
+
+  <!-- ANOS -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 02 —</span>
+      <h3 class="section-title">Como nos comunicamos pelos anos</h3>
+      <span class="section-subtitle">a year in review</span>
+    </div>
+    <div class="chart-card">
+      <div class="chart-card-title">Volume de mensagens por ano</div>
+      <div class="chart-card-subtitle">2025 foi nosso ano mais intenso — quase 100 mensagens por dia, em média</div>
+      <div class="years-chart">
+        <div class="year-bar">
+          <div class="year-bar-fill partial" style="height: 47.5%;">
+            <div class="year-bar-value">15.770</div>
+          </div>
+          <div class="year-bar-label">2024</div>
+          <div class="year-bar-sublabel">desde fev · ~50/dia</div>
+        </div>
+        <div class="year-bar">
+          <div class="year-bar-fill peak" style="height: 100%;">
+            <div class="year-bar-value">33.196</div>
+          </div>
+          <div class="year-bar-label">2025</div>
+          <div class="year-bar-sublabel">ano completo · ~91/dia</div>
+        </div>
+        <div class="year-bar">
+          <div class="year-bar-fill partial" style="height: 35.6%;">
+            <div class="year-bar-value">11.828</div>
+          </div>
+          <div class="year-bar-label">2026</div>
+          <div class="year-bar-sublabel">até maio · ~90/dia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEATMAP -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 03 —</span>
+      <h3 class="section-title">Quando nos falamos</h3>
+      <span class="section-subtitle">heatmap of the heart</span>
+    </div>
+    <div class="chart-card">
+      <div class="chart-card-title">Mapa de calor — dia da semana × hora</div>
+      <div class="chart-card-subtitle">Os horários quentes ficam marcados em dourado. Final de tarde e noite vencem fácil.</div>
+      <div class="heatmap-wrapper">
+        <div class="heatmap" id="heatmap"></div>
+        <div class="heatmap-legend">
+          <span>menos</span>
+          <div class="heatmap-legend-bar" id="legend"></div>
+          <span>mais</span>
+        </div>
+      </div>
+      <div class="heatmap-hint">← arraste para o lado para ver todas as horas →</div>
+    </div>
+  </section>
+
+  <!-- EMOJIS -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 04 —</span>
+      <h3 class="section-title">Os emojis que dizem por nós</h3>
+      <span class="section-subtitle">a love language</span>
+    </div>
+
+    <div class="emoji-podium">
+      <div class="emoji-podium-card">
+        <div class="emoji-rank">— 2º —</div>
+        <div class="emoji-display">✅</div>
+        <div class="emoji-count">458</div>
+        <div class="emoji-label">vezes</div>
+      </div>
+      <div class="emoji-podium-card first">
+        <div class="emoji-rank">— 1º —</div>
+        <div class="emoji-display">❤️</div>
+        <div class="emoji-count">600</div>
+        <div class="emoji-label">vezes · o nosso emoji</div>
+      </div>
+      <div class="emoji-podium-card">
+        <div class="emoji-rank">— 3º —</div>
+        <div class="emoji-display">👍</div>
+        <div class="emoji-count">258</div>
+        <div class="emoji-label">vezes</div>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-card-title">Top 15 — emojis em ordem de afeição</div>
+      <div class="chart-card-subtitle">Cada barra representa a proporção em relação ao mais usado</div>
+      <div class="emoji-list" id="emoji-list"></div>
+    </div>
+  </section>
+
+  <!-- DUO -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 05 —</span>
+      <h3 class="section-title">Nós dois, lado a lado</h3>
+      <span class="section-subtitle">a comparison</span>
+    </div>
+    <div class="vs-block">
+      <div class="vs-side left">
+        <div class="vs-name">Patrick</div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">32.311</div>
+          <div class="vs-stat-label">mensagens enviadas</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">100</div>
+          <div class="vs-stat-label">"te amo" ditos</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">1m 18s</div>
+          <div class="vs-stat-label">tempo mediano de resposta</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">20</div>
+          <div class="vs-stat-label">caracteres por mensagem</div>
+        </div>
+      </div>
+      <div class="vs-center">❤</div>
+      <div class="vs-side right">
+        <div class="vs-name">Camila</div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">28.483</div>
+          <div class="vs-stat-label">mensagens enviadas</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">38</div>
+          <div class="vs-stat-label">"te amo" ditos</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">28s</div>
+          <div class="vs-stat-label">tempo mediano de resposta</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-value">26</div>
+          <div class="vs-stat-label">caracteres por mensagem</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TE AMO TIMELINE -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 06 —</span>
+      <h3 class="section-title">A evolução do "te amo"</h3>
+      <span class="section-subtitle">declarations over time</span>
+    </div>
+    <div class="chart-card">
+      <div class="chart-card-title">Frequência mensal das declarações</div>
+      <div class="chart-card-subtitle">Quantas vezes "te amo" (e variações) aparecem por mês</div>
+      <div class="teamo-chart">
+        <div class="teamo-line" id="teamo-bars"></div>
+        <div class="teamo-labels">
+          <span>Fev/24</span>
+          <span>Ago/24</span>
+          <span>Fev/25</span>
+          <span>Ago/25</span>
+          <span>Fev/26</span>
+          <span>Mai/26</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURIOSIDADES -->
+  <section>
+    <div class="section-header">
+      <span class="section-number">— 07 —</span>
+      <h3 class="section-title">Curiosidades do nosso arquivo</h3>
+      <span class="section-subtitle">love trivia</span>
+    </div>
+    <div class="curiosities">
+      <div class="curio">
+        <div class="curio-label">Dia mais conversador</div>
+        <div class="curio-value">05 Out</div>
+        <div class="curio-detail">2025 · 448 mensagens em 24 horas — um sábado especial</div>
+      </div>
+      <div class="curio dark">
+        <div class="curio-label">Quem mais inicia conversa</div>
+        <div class="curio-value italic">Camila</div>
+        <div class="curio-detail">62% das vezes — 461 a 277 a favor dela</div>
+      </div>
+      <div class="curio">
+        <div class="curio-label">Horário de pico</div>
+        <div class="curio-value">21h–22h</div>
+        <div class="curio-detail">o nosso momento favorito de troca, fim do dia</div>
+      </div>
+      <div class="curio dark">
+        <div class="curio-label">Maior intervalo sem nos falar</div>
+        <div class="curio-value">8 dias</div>
+        <div class="curio-detail">o silêncio raro em 817 dias de história</div>
+      </div>
+      <div class="curio">
+        <div class="curio-label">Léo aparece</div>
+        <div class="curio-value">665 vezes</div>
+        <div class="curio-detail">o assunto mais recorrente — nosso pequeno é o protagonista</div>
+      </div>
+      <div class="curio dark">
+        <div class="curio-label">Palavra do casal</div>
+        <div class="curio-value italic">"dormir"</div>
+        <div class="curio-detail">552 vezes — boa noite é nosso ritual sagrado</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL QUOTE -->
+  <div class="quote-block">
+    <p class="quote">
+      Pareceu pouco escrever isso. Mas foram <span class="highlight">60.794 momentos</span><br>
+      em que um pensou no outro e <span class="highlight">decidiu dizer</span>.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="heart-trail">❤ &nbsp; ❤ &nbsp; ❤ &nbsp; ❤ &nbsp; ❤</div>
+    <p class="footer-text">
+      <strong>Patrick &amp; Camila</strong> — uma compilação carinhosa de 16 de fevereiro de 2024 a 12 de maio de 2026.<br>
+      Feito com dados reais e muito amor.
+    </p>
+  </footer>
+
+</div>
+
+<script>
+// ───── HEATMAP DATA ─────
+const heatmapData = [[185, 36, 0, 1, 0, 6, 47, 112, 182, 501, 671, 633, 803, 1044, 645, 518, 431, 422, 418, 552, 415, 330, 257, 316], [192, 180, 21, 6, 17, 40, 70, 266, 290, 644, 613, 619, 861, 901, 457, 261, 260, 433, 365, 487, 560, 617, 360, 365], [237, 144, 33, 17, 2, 8, 47, 122, 233, 363, 558, 696, 801, 1013, 428, 473, 539, 342, 395, 558, 465, 642, 437, 299], [126, 102, 7, 3, 3, 18, 98, 191, 380, 471, 622, 449, 959, 934, 409, 470, 432, 467, 789, 908, 802, 814, 381, 380], [172, 34, 43, 21, 4, 7, 60, 181, 287, 464, 576, 506, 938, 1186, 475, 486, 372, 464, 405, 483, 359, 288, 383, 363], [186, 211, 63, 10, 0, 1, 196, 258, 443, 501, 649, 883, 599, 713, 612, 488, 458, 411, 440, 496, 319, 366, 266, 428], [222, 81, 74, 10, 0, 3, 58, 153, 303, 473, 504, 561, 657, 396, 398, 430, 358, 377, 337, 394, 209, 229, 277, 259]];
+const emojiData = [["❤", 600], ["✅", 458], ["👍", 258], ["🫠", 194], ["🤣", 187], ["👀", 122], ["🚨", 87], ["🤡", 69], ["😍", 67], ["💙", 50], ["🥲", 34], ["💜", 29], ["🔥", 28], ["❌", 28], ["🙌", 25]];
+const teAmoData = [["2024-02", 2], ["2024-03", 9], ["2024-04", 11], ["2024-05", 6], ["2024-06", 2], ["2024-07", 2], ["2024-08", 0], ["2024-09", 0], ["2024-10", 1], ["2024-11", 5], ["2024-12", 3], ["2025-01", 4], ["2025-02", 4], ["2025-03", 5], ["2025-04", 7], ["2025-05", 9], ["2025-06", 7], ["2025-07", 7], ["2025-08", 6], ["2025-09", 8], ["2025-10", 5], ["2025-11", 3], ["2025-12", 3], ["2026-01", 7], ["2026-02", 8], ["2026-03", 9], ["2026-04", 2], ["2026-05", 3]];
+
+const days = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
+
+// Compute max for scaling
+let max = 0;
+for (let d = 0; d < 7; d++) {
+  for (let h = 0; h < 24; h++) {
+    if (heatmapData[d][h] > max) max = heatmapData[d][h];
+  }
+}
+
+// Build heatmap grid
+const heatmapEl = document.getElementById('heatmap');
+let html = '<div class="corner"></div>';
+for (let h = 0; h < 24; h++) {
+  html += `<div class="hour-label">${h < 10 ? '0' + h : h}</div>`;
+}
+for (let d = 0; d < 7; d++) {
+  html += `<div class="dow-label">${days[d]}</div>`;
+  for (let h = 0; h < 24; h++) {
+    const v = heatmapData[d][h];
+    const ratio = v / max;
+    // Use HSL: pink-to-deep-red. Low values -> warm cream.
+    let color;
+    if (ratio === 0) {
+      color = '#FBEFE7';
+    } else {
+      // Interpolate from cream/pale-pink to deep red
+      const lightness = 92 - ratio * 60; // 92% -> 32%
+      const saturation = 30 + ratio * 50; // 30 -> 80
+      const hue = 360 - ratio * 5; // ~360 (red) keeping in red zone
+      color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    }
+    const peak = ratio > 0.7 ? 'peak' : '';
+    html += `<div class="cell ${peak}" style="background:${color}" title="${days[d]} ${h}h — ${v} msgs"></div>`;
+  }
+}
+heatmapEl.innerHTML = html;
+
+// Legend
+const legendEl = document.getElementById('legend');
+let legendHtml = '';
+for (let i = 0; i <= 5; i++) {
+  const ratio = i / 5;
+  const lightness = 92 - ratio * 60;
+  const saturation = 30 + ratio * 50;
+  legendHtml += `<div style="background: hsl(360, ${saturation}%, ${lightness}%)"></div>`;
+}
+legendEl.innerHTML = legendHtml;
+
+// ───── EMOJI LIST ─────
+const emojiListEl = document.getElementById('emoji-list');
+const top15 = emojiData.slice(0, 15);
+const maxEmoji = top15[0][1];
+let elHtml = '';
+top15.forEach((item, i) => {
+  const [emoji, count] = item;
+  const w = (count / maxEmoji * 100).toFixed(1);
+  elHtml += `
+    <div class="emoji-row">
+      <span class="e">${emoji}</span>
+      <div class="bar"><div class="bar-fill" style="width: ${w}%"></div></div>
+      <span class="count">${count}</span>
+    </div>
+  `;
+});
+emojiListEl.innerHTML = elHtml;
+
+// ───── TE AMO TIMELINE ─────
+const teamoEl = document.getElementById('teamo-bars');
+const teamoMax = Math.max(...teAmoData.map(d => d[1]));
+let teamoHtml = '';
+teAmoData.forEach(([month, count]) => {
+  const h = (count / teamoMax * 100).toFixed(1);
+  teamoHtml += `<div class="teamo-bar" style="height: ${h}%" title="${month}: ${count}"></div>`;
+});
+teamoEl.innerHTML = teamoHtml;
+</script>
+</body>
+</html>
