@@ -644,6 +644,18 @@
   }
   .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
+  /* ─────────── ILUSTRAÇÕES ─────────── */
+  .section-ilu {
+    position: absolute;
+    pointer-events: none;
+    z-index: 3;
+  }
+  .ilu-envelope-01 {
+    width: 220px;
+    right: -16px;
+    top: -16px;
+  }
+
   /* ═══════════════════════════════════════════ */
   /* ═══════════ RESPONSIVIDADE ═══════════════ */
   /* ═══════════════════════════════════════════ */
@@ -665,6 +677,13 @@
     .vs-center { display: none; }
     .vs-side.left { border-right: none; border-bottom: 3px solid var(--red); }
     .vs-side.right { border-left: none; border-top: 3px solid var(--pink-deep); margin-top: -8px; }
+  }
+
+  @media (max-width: 900px) {
+    .ilu-envelope-01 { width: 160px; right: -8px; top: -8px; }
+  }
+  @media (max-width: 640px) {
+    .section-ilu { display: none; }
   }
 
   /* MOBILE (até 640px) */
@@ -806,7 +825,8 @@
   </header>
 
   <!-- BIG NUMBERS -->
-  <section>
+  <section style="position:relative;">
+    <img src="assets/envelope-frontal.png" class="section-ilu ilu-envelope-01" alt="">
     <div class="section-header">
       <span class="section-number">— 01 —</span>
       <h3 class="section-title">Tudo que a gente disse sem perceber</h3>
