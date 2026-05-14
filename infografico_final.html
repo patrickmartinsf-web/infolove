@@ -655,6 +655,12 @@
     right: 24%;
     top: -45px;
   }
+  .ilu-envelope-heatmap {
+    width: 160px;
+    left: -52px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   /* ═══════════════════════════════════════════ */
   /* ═══════════ RESPONSIVIDADE ═══════════════ */
@@ -686,8 +692,12 @@
     .section-ilu { display: none; }
   }
 
-  /* MOBILE (até 640px) */
-  @media (max-width: 640px) {
+  .ilu-envelope-heatmap {
+    width: 160px;
+    left: -52px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
     .page { padding: 40px 20px 60px; }
     
     /* HERO */
@@ -946,7 +956,8 @@
   </section>
 
   <!-- HEATMAP -->
-  <section>
+  <section style="position:relative;">
+    <img src="assets/envelope-bar.png" class="section-ilu ilu-envelope-heatmap" alt="">
     <div class="section-header">
       <span class="section-number">— 03 —</span>
       <h3 class="section-title">Os horários em que a gente se encontra</h3>
